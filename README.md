@@ -1,0 +1,1 @@
+The project aims to detect various human emotions like "angry", "happy", and "sad" based on image data. It utilizes custom convolutional neural networks as a baseline model and incorporates the modern CNNs like EfficientNet and VGGNet to get the optimal results 
