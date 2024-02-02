@@ -26,22 +26,15 @@ Train data has about 6799 files and the train data has 2278 files.
 
 All the model were trained for 30 epochs with an initial learning rate of 0.01 (5e-5 for Vision Transformer). Adam was used as the optimizer to train to minimize the categorical cross entropy loss.
 Below are the configuration:
-
-CONFIGURATIONS = {
-    'BATCH_SIZE':32,
-    'IM_SIZE': 256,
-    'LEARNING_RATE': 0.001,
-    'N_EPOCH': 30,
-    'DROPOUT_RATE':0.0,
-    'REGULARIZTION_RATE': 0.0,
-    'N_FILTERS':6,
-    'KERNEL_SIZE':3,
-    'N_STRIDES':1,
-    'POOL_SIZE':2,
-    'N_DENSE_1': 100,
-    'N_DENSE_2': 10,
-    'NUM_CLASSES':3
-}
+1. BATCH_SIZE:32
+2. IM_SIZE: 256
+3. LEARNING_RATE: 0.001
+4. N_EPOCH: 30
+5. N_FILTERS:6
+6. KERNEL_SIZE:3
+7. N_STRIDES:1
+8. POOL_SIZE:2
+9. NUM_CLASSES:3
 
 Tensorflow callbacks were used for logging to later visualize on a tensorboard. Early stopping, reduce on plateau were implemeted to stop the training when there is no further improvement for certain number of epochs.
 
