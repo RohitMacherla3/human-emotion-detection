@@ -41,3 +41,7 @@ Tensorflow callbacks were used for logging to later visualize on a tensorboard. 
 ### Metrics
 <img width="511" alt="image" src="https://github.com/RohitMacherla3/human-emotion-detection/assets/89356811/ed76845f-9e9f-4a9e-8564-5a130701311e">
 
+### Conclusion
+As one would assume, the transformer model out-performs the CNN models with just training for 10 epochs and among the CNN models, EfficientNetB4 does a good job compared to ResNet50 with much lesser model complexity.
+
+
