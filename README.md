@@ -13,7 +13,7 @@ Train data has about 6799 files and the train data has 2278 files.
 ### Preprocessing
 
 - Initially, the data was converted into a Tensorflow dataset to be able to work with the neural networks making the data into batches, converting the target variable into categorical values, and shuffling the data to remove any data collection bias.
-- Data Augmentation as performed using random rotation, random flip, and random contrast layers of keras to remove location invariance problem.
+- Data Augmentation was performed using random rotation, random flip, and random contrast layers of keras to remove location invariance problem.
 - Images were rescaled and resized to standard (224,224, 3) sizes.
 
 ### Models Used
@@ -43,6 +43,8 @@ Tensorflow callbacks were used for logging to later visualize on a Tensorboard. 
 
 
 Model Comparision Plot
+
+
 ![image](https://github.com/RohitMacherla3/human-emotion-detection-CV/assets/89356811/7908ba96-3fe9-4634-9f1d-796162359bc3)
 
 ### Conclusion
