@@ -1,10 +1,10 @@
 ### Objective
-The project aims to detect various human emotions like "angry", "happy", and "sad" based on image data. It utilizes custom convolutional neural networks as a baseline model and incorporates the modern CNNs like ResNet and EfficientNet while also exploring the Transformer models in Vision to get the optimal results.
+The project aims to detect various human emotions like "angry", "happy", and "sad" based on image data. It utilizes custom convolutional neural networks as a baseline model and incorporates modern CNNs like ResNet and EfficientNet while also exploring the Transformer models in Vision to get the optimal results.
 
 ### Dataset
 
 The dataset is obtained from Kaggle - https://www.kaggle.com/datasets/muhammadhananasghar/human-emotions-datasethes
-It has train and test datasets seperated both containing 3 classes - 'angry', 'happy', and 'sad'
+It has train and test datasets separated both containing 3 classes - 'angry', 'happy', and 'sad'
 
 Train data has about 6799 files and the train data has 2278 files.
 
@@ -12,8 +12,8 @@ Train data has about 6799 files and the train data has 2278 files.
 
 ### Preprocessing
 
-- Initially the data was converted into tensorflow dataset to be able to work with the neural networks making the data into batches, converting the target variable into categorical values, shuffling the data to remove any data collection bias.
-- Data Augmentation as performed using random rotation, random flip and random contarst layers of keras to remove location invariance problem.
+- Initially, the data was converted into a Tensorflow dataset to be able to work with the neural networks making the data into batches, converting the target variable into categorical values, and shuffling the data to remove any data collection bias.
+- Data Augmentation as performed using random rotation, random flip, and random contrast layers of keras to remove location invariance problem.
 - Images were rescaled and resized to standard (224,224, 3) sizes.
 
 ### Models Used
@@ -24,8 +24,8 @@ Train data has about 6799 files and the train data has 2278 files.
 
 ### Training and Optimization
 
-All the model were trained for 30 epochs with an initial learning rate of 0.01 (5e-5 for Vision Transformer). Adam was used as the optimizer to train to minimize the categorical cross entropy loss.
-Below are the configuration:
+All the models were trained for 30 epochs with an initial learning rate of 0.01 (5e-5 for Vision Transformer). Adam was used as the optimizer to train to minimize the categorical cross-entropy loss.
+Below are the configurations:
 1. BATCH_SIZE:32
 2. IM_SIZE: 256
 3. LEARNING_RATE: 0.001
@@ -36,12 +36,16 @@ Below are the configuration:
 8. POOL_SIZE:2
 9. NUM_CLASSES:3
 
-Tensorflow callbacks were used for logging to later visualize on a tensorboard. Early stopping, reduce on plateau were implemeted to stop the training when there is no further improvement for certain number of epochs.
+Tensorflow callbacks were used for logging to later visualize on a Tensorboard. 'Early Stopping' and 'Reduce on Plateau' were implemented to stop the training when there was no further improvement for a certain number of epochs.
 
 ### Metrics
 <img width="511" alt="image" src="https://github.com/RohitMacherla3/human-emotion-detection/assets/89356811/ed76845f-9e9f-4a9e-8564-5a130701311e">
 
+![image](https://github.com/RohitMacherla3/human-emotion-detection-CV/assets/89356811/6ac4f4ac-7c31-4447-ad31-6580ceb4a457)
+
+
 ### Conclusion
-As one would assume, the transformer model out-performs the CNN models with just training for 10 epochs and among the CNN models, EfficientNetB4 does a good job compared to ResNet50 with much lesser model complexity.
+As one would assume, the transformer model outperforms the CNN models with just training for 10 epochs, and among the CNN models, EfficientNetB4 does a good job compared to ResNet50 with much lesser model complexity.
+
 
 
