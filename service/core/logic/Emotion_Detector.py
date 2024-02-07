@@ -2,14 +2,13 @@ import onnxruntime as rt
 import numpy as np
 import cv2
 import tensorflow as tf
-import os
 
 def Emotion_Detector(image_array):
     
     im = cv2.resize(image_array, (224, 224))
     if im.shape[-1] > 3:
         im = im[..., :3]
-    if im.shape[-1] == 1:
+    if im.shape[-1] == 1 or len(im.shape) ==2:
         im = cv2.cvtColor(im, cv2.COLOR_GRAY2RGB)
     im = np.float32(im)
     im = tf.expand_dims(im, axis=0)
