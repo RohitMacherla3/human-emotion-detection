@@ -34,7 +34,7 @@ build_time_vars = {'ABIFLAGS': '',
  'BYTESTR_DEPS': '\\',
  'CC': 'clang',
  'CCSHARED': '',
- 'CFLAGS': '-Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g '
+ 'CFLAGS': '-Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG '
            '-fwrapv -O2 -Wall '
            ''
            '-fPIC   -O2  '
@@ -92,7 +92,7 @@ build_time_vars = {'ABIFLAGS': '',
                 "'--with-tcltk-libs=-L/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/lib "
                 "-ltcl8.6 -ltk8.6''--with-platlibdir=lib''--with-lto'"
                 "'--enable-optimizations'"
-                "'-oldincludedir=/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/_build_env/arm64-apple-darwin20.0.0/sysroot/usr/include'"
+                "'-oldincludedir=/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/_build_env/arm64-apple-darwin20.0.0/sysroot/usr/include'"
                 "'--disable-shared''PROFILE_TASK=-m test --pgo'"
                 "'build_alias=arm64-apple-darwin20.0.0'"
                 "'host_alias=arm64-apple-darwin20.0.0''MACHDEP=darwin'"
@@ -114,16 +114,17 @@ build_time_vars = {'ABIFLAGS': '',
                 '-D_FORTIFY_SOURCE=2 -isystem '
                 '/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/include '
                 '-mmacosx-version-min=11.1 '
-                "-I/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/include'",
+                "-I/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/include'"
+                "'PKG_CONFIG_PATH=/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/lib/pkgconfig'",
  'CONFINCLUDEDIR': '/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/include',
  'CONFINCLUDEPY': '/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/include/python3.10',
  'COREPYTHONPATH': '',
- 'COVERAGE_INFO': '/private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/build-static/coverage.info',
- 'COVERAGE_REPORT': '/private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/build-static/lcov-report',
+ 'COVERAGE_INFO': '/private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work/build-static/coverage.info',
+ 'COVERAGE_REPORT': '/private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work/build-static/lcov-report',
  'COVERAGE_REPORT_OPTIONS': '--no-branch-coverage --title "CPython lcov '
                             'report"',
  'CPPFLAGS': '-IObjects -IInclude -IPython -I. '
-             '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Include '
+             '-I/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work/Include '
              ''
              ''
              '-D_FORTIFY_SOURCE=2 -isystem '
@@ -362,8 +363,10 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_LIBRESOLV': 0,
  'HAVE_LIBSENDFILE': 0,
  'HAVE_LIBUTIL_H': 0,
+ 'HAVE_LIBUUID': 0,
  'HAVE_LINK': 1,
  'HAVE_LINKAT': 1,
+ 'HAVE_LINUX_AUXVEC_H': 0,
  'HAVE_LINUX_CAN_BCM_H': 0,
  'HAVE_LINUX_CAN_H': 0,
  'HAVE_LINUX_CAN_J1939_H': 0,
@@ -453,6 +456,7 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_SCHED_SETAFFINITY': 0,
  'HAVE_SCHED_SETPARAM': 0,
  'HAVE_SCHED_SETSCHEDULER': 0,
+ 'HAVE_SEM_CLOCKWAIT': 0,
  'HAVE_SEM_GETVALUE': 1,
  'HAVE_SEM_OPEN': 1,
  'HAVE_SEM_TIMEDWAIT': 0,
@@ -525,6 +529,7 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_SYSCONF': 1,
  'HAVE_SYSEXITS_H': 1,
  'HAVE_SYS_AUDIOIO_H': 0,
+ 'HAVE_SYS_AUXV_H': 0,
  'HAVE_SYS_BSDTTY_H': 0,
  'HAVE_SYS_DEVPOLL_H': 0,
  'HAVE_SYS_DIR_H': 0,
@@ -647,7 +652,7 @@ build_time_vars = {'ABIFLAGS': '',
  'LIBC': '',
  'LIBDEST': '/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/lib/python3.10',
  'LIBDIR': '/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/lib',
- 'LIBFFI_INCLUDEDIR': '',
+ 'LIBFFI_INCLUDEDIR': '/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/include',
  'LIBM': '',
  'LIBOBJDIR': 'Python/',
  'LIBOBJS': '',
@@ -666,7 +671,7 @@ build_time_vars = {'ABIFLAGS': '',
  'LIPO_INTEL64_FLAGS': '',
  'LLVM_PROF_ERR': 'no',
  'LLVM_PROF_FILE': 'LLVM_PROFILE_FILE="code-%p.profclangr"',
- 'LLVM_PROF_MERGER': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/_build_env/bin/llvm-profdata '
+ 'LLVM_PROF_MERGER': '/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/_build_env/bin/llvm-profdata '
                      'merge -output=code.profclangd *.profclangr',
  'LN': 'ln',
  'LOCALMODLIBS': '',
@@ -677,9 +682,9 @@ build_time_vars = {'ABIFLAGS': '',
  'MAINCC': 'clang',
  'MAJOR_IN_MKDEV': 0,
  'MAJOR_IN_SYSMACROS': 0,
- 'MAKESETUP': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Modules/makesetup',
+ 'MAKESETUP': '/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work/Modules/makesetup',
  'MANDIR': '/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/share/man',
- 'MKDIR_P': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/install-sh '
+ 'MKDIR_P': '/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work/install-sh '
             '-c -d',
  'MODBUILT_NAMES': 'posix  errno  pwd  _sre  _codecs  _weakref  _functools  '
                    '_operator  _collections  _abc  itertools  atexit  _signal  '
@@ -709,7 +714,7 @@ build_time_vars = {'ABIFLAGS': '',
  'OPENSSL_LDFLAGS': '-L/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/lib',
  'OPENSSL_LIBS': '-lssl -lcrypto',
  'OPENSSL_RPATH': '',
- 'OPT': '-DNDEBUG -g -fwrapv -O2 -Wall',
+ 'OPT': '-DNDEBUG -fwrapv -O2 -Wall',
  'OTHER_LIBTOOL_OPT': '',
  'PACKAGE_BUGREPORT': 0,
  'PACKAGE_NAME': 0,
@@ -745,7 +750,7 @@ build_time_vars = {'ABIFLAGS': '',
  'PY_BUILD_ENVIRON': '',
  'PY_BUILTIN_HASHLIB_HASHES': '"md5,sha1,sha256,sha512,sha3,blake2"',
  'PY_BUILTIN_MODULE_CFLAGS': '-Wno-unused-result -Wsign-compare '
-                             '-Wunreachable-code -DNDEBUG -g -fwrapv -O2 -Wall '
+                             '-Wunreachable-code -DNDEBUG -fwrapv -O2 -Wall '
                              ''
                              ''
                              '-fPIC  '
@@ -767,9 +772,9 @@ build_time_vars = {'ABIFLAGS': '',
                              '-Werror=implicit-function-declaration '
                              '-fvisibility=hidden '
                              '-fprofile-instr-use=code.profclangd '
-                             '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Include/internal '
+                             '-I/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work/Include/internal '
                              '-IObjects -IInclude -IPython -I. '
-                             '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Include '
+                             '-I/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work/Include '
                              ''
                              ''
                              '-D_FORTIFY_SOURCE=2 -isystem '
@@ -784,7 +789,7 @@ build_time_vars = {'ABIFLAGS': '',
                              '-I/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/include '
                              '-DPy_BUILD_CORE_BUILTIN',
  'PY_CFLAGS': '-Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG '
-              '-g -fwrapv -O2 -Wall '
+              '-fwrapv -O2 -Wall '
               ''
               '-fPIC   -O2  '
               '-isystem '
@@ -804,10 +809,10 @@ build_time_vars = {'ABIFLAGS': '',
                      '-Wstrict-prototypes '
                      '-Werror=implicit-function-declaration '
                      '-fvisibility=hidden -fprofile-instr-use=code.profclangd '
-                     '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Include/internal',
+                     '-I/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work/Include/internal',
  'PY_COERCE_C_LOCALE': 1,
  'PY_CORE_CFLAGS': '-Wno-unused-result -Wsign-compare -Wunreachable-code '
-                   '-DNDEBUG -g -fwrapv -O2 -Wall '
+                   '-DNDEBUG -fwrapv -O2 -Wall '
                    ''
                    '-fPIC   -O2 '
                    '-isystem '
@@ -826,9 +831,9 @@ build_time_vars = {'ABIFLAGS': '',
                    '-Wno-missing-field-initializers -Wstrict-prototypes '
                    '-Werror=implicit-function-declaration -fvisibility=hidden '
                    '-fprofile-instr-use=code.profclangd '
-                   '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Include/internal '
+                   '-I/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work/Include/internal '
                    '-IObjects -IInclude -IPython -I. '
-                   '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Include '
+                   '-I/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work/Include '
                    ''
                    ''
                    '-D_FORTIFY_SOURCE=2 -isystem '
@@ -856,7 +861,7 @@ build_time_vars = {'ABIFLAGS': '',
                     '-L/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/lib '
                     '-Wl,-export_dynamic -g',
  'PY_CPPFLAGS': '-IObjects -IInclude -IPython -I. '
-                '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Include '
+                '-I/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work/Include '
                 ''
                 ''
                 '-D_FORTIFY_SOURCE=2 -isystem '
@@ -887,7 +892,7 @@ build_time_vars = {'ABIFLAGS': '',
  'PY_SSL_DEFAULT_CIPHERS': 1,
  'PY_SSL_DEFAULT_CIPHER_STRING': 0,
  'PY_STDMODULE_CFLAGS': '-Wno-unused-result -Wsign-compare -Wunreachable-code '
-                        '-DNDEBUG -g -fwrapv -O2 -Wall '
+                        '-DNDEBUG -fwrapv -O2 -Wall '
                         ''
                         '-fPIC   '
                         '-O2  -isystem '
@@ -907,9 +912,9 @@ build_time_vars = {'ABIFLAGS': '',
                         '-Werror=implicit-function-declaration '
                         '-fvisibility=hidden '
                         '-fprofile-instr-use=code.profclangd '
-                        '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Include/internal '
+                        '-I/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work/Include/internal '
                         '-IObjects -IInclude -IPython -I. '
-                        '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Include '
+                        '-I/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work/Include '
                         ''
                         ''
                         '-D_FORTIFY_SOURCE=2 -isystem '
@@ -933,7 +938,6 @@ build_time_vars = {'ABIFLAGS': '',
  'RUNSHARED': '',
  'SCRIPTDIR': '/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/lib',
  'SETPGRP_HAVE_ARG': 0,
- 'SGI_ABI': '',
  'SHELL': '/bin/sh',
  'SHLIBS': '-ldl   -framework CoreFoundation',
  'SHLIB_SUFFIX': '.so',
@@ -960,7 +964,7 @@ build_time_vars = {'ABIFLAGS': '',
  'SIZEOF__BOOL': 1,
  'SOABI': 'cpython-310-darwin',
  'SRCDIRS': 'Parser Objects Python Modules Modules/_io Programs',
- 'SRC_GDB_HOOKS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Tools/gdb/libpython.py',
+ 'SRC_GDB_HOOKS': '/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work/Tools/gdb/libpython.py',
  'STATIC_LIBPYTHON': 1,
  'STDC_HEADERS': 1,
  'STRICT_SYSV_CURSES': "/* Don't use ncurses extensions */",
@@ -977,20 +981,21 @@ build_time_vars = {'ABIFLAGS': '',
  'TESTPYTHON': './python.exe',
  'TESTPYTHONOPTS': '',
  'TESTRUNNER': './python.exe '
-               '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Tools/scripts/run_tests.py',
+               '/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work/Tools/scripts/run_tests.py',
  'TESTSUBDIRS': 'ctypes/test \\',
  'TESTTIMEOUT': 1200,
  'TEST_MODULES': 'yes',
+ 'THREAD_STACK_SIZE': '0x1000000',
  'TIMEMODULE_LIB': 0,
  'TIME_WITH_SYS_TIME': 1,
  'TM_IN_SYS_TIME': 0,
  'TZPATH': '/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/share/zoneinfo:/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/share/tzinfo',
  'UNICODE_DEPS': '\\',
  'UNIVERSALSDK': '',
- 'UPDATE_FILE': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Tools/scripts/update_file.py',
+ 'UPDATE_FILE': '/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work/Tools/scripts/update_file.py',
  'USE_COMPUTED_GOTOS': 1,
  'VERSION': '3.10',
- 'VPATH': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work',
+ 'VPATH': '/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work',
  'WHEEL_PKG_DIR': '',
  'WINDOW_HAS_FLAGS': 1,
  'WITH_DECIMAL_CONTEXTVAR': 1,
@@ -1004,9 +1009,9 @@ build_time_vars = {'ABIFLAGS': '',
  'WITH_VALGRIND': 0,
  'X87_DOUBLE_ROUNDING': 0,
  'XMLLIBSUBDIRS': 'xml xml/dom xml/etree xml/parsers xml/sax',
- 'abs_builddir': '/private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/build-static',
- 'abs_srcdir': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work',
+ 'abs_builddir': '/private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work/build-static',
+ 'abs_srcdir': '/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work',
  'datarootdir': '/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/share',
  'exec_prefix': '/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv',
  'prefix': '/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv',
- 'srcdir': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work'}
+ 'srcdir': '/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work'}
