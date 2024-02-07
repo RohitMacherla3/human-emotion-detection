@@ -6,7 +6,7 @@ pyYAML>=5.3.1
 requests>=2.23.0
 filterpy
 onnxruntime ==1.13.1
-tensorflow-python
-sklearn-python
+tensorflow
+scikit-learn
 lap
 -e .
