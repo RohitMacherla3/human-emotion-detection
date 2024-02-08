@@ -348,11 +348,11 @@ class TestCase(object):
     # of difflib.  See #11763.
     _diffThreshold = 2**16
 
-    def __init_subclass__(cls, *args, **kwargs):
-        # Attribute used by TestSuite for classSetUp
-        cls._classSetupFailed = False
-        cls._class_cleanups = []
-        super().__init_subclass__(*args, **kwargs)
+    # Attribute used by TestSuite for classSetUp
+
+    _classSetupFailed = False
+
+    _class_cleanups = []
 
     def __init__(self, methodName='runTest'):
         """Create an instance of the class that will use the named test
@@ -651,20 +651,12 @@ class TestCase(object):
 
     def debug(self):
         """Run the test without collecting errors in a TestResult"""
-        testMethod = getattr(self, self._testMethodName)
-        if (getattr(self.__class__, "__unittest_skip__", False) or
-            getattr(testMethod, "__unittest_skip__", False)):
-            # If the class or method was skipped.
-            skip_why = (getattr(self.__class__, '__unittest_skip_why__', '')
-                        or getattr(testMethod, '__unittest_skip_why__', ''))
-            raise SkipTest(skip_why)
-
-        self._callSetUp()
-        self._callTestMethod(testMethod)
-        self._callTearDown()
+        self.setUp()
+        getattr(self, self._testMethodName)()
+        self.tearDown()
         while self._cleanups:
-            function, args, kwargs = self._cleanups.pop()
-            self._callCleanup(function, *args, **kwargs)
+            function, args, kwargs = self._cleanups.pop(-1)
+            function(*args, **kwargs)
 
     def skipTest(self, reason):
         """Skip this test."""
@@ -1146,8 +1138,7 @@ class TestCase(object):
     def assertDictContainsSubset(self, subset, dictionary, msg=None):
         """Checks whether dictionary is a superset of subset."""
         warnings.warn('assertDictContainsSubset is deprecated',
-                      DeprecationWarning,
-                      stacklevel=2)
+                      DeprecationWarning)
         missing = []
         mismatched = []
         for key, value in subset.items():

@@ -1,4 +1,4 @@
-/* Generated automatically from /var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work/Modules/config.c.in by makesetup. */
+/* Generated automatically from /var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Modules/config.c.in by makesetup. */
 /* -*- C -*- ***********************************************
 Copyright (c) 2000, BeOpen.com.
 Copyright (c) 1995-2000, Corporation for National Research Initiatives.

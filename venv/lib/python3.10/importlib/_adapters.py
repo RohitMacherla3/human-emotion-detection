@@ -46,11 +46,10 @@ class DegenerateFiles:
         def joinpath(self, other):
             return DegenerateFiles.Path()
 
-        @property
         def name(self):
             return ''
 
-        def open(self, mode='rb', *args, **kwargs):
+        def open(self):
             raise ValueError()
 
     def __init__(self, spec):

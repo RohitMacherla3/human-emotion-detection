@@ -1,4 +1,4 @@
-==> 2024-02-06 21:36:37 <==
+==> 2024-02-08 18:05:29 <==
 # cmd: /Users/rohitmacherla/miniconda3/bin/conda create -p venv python==3.10 -y
 # conda version: 22.11.1
 +defaults/noarch::tzdata-2023d-h04d1e81_0
@@ -17,12 +17,3 @@
 +defaults/osx-arm64::xz-5.4.5-h80987f9_0
 +defaults/osx-arm64::zlib-1.2.13-h5a0b063_0
 # update specs: ['python==3.10']
-==> 2024-02-06 23:24:42 <==
-# cmd: /Users/rohitmacherla/miniconda3/bin/conda install python
-# conda version: 22.11.1
--defaults/osx-arm64::openssl-1.1.1w-h1a28f6b_0
--defaults/osx-arm64::python-3.10.0-hbdb9e5c_5
-+defaults/osx-arm64::openssl-3.0.13-h1a28f6b_0
-+defaults/osx-arm64::python-3.10.13-hb885b13_0
-# update specs: ['python']
-# neutered specs: ['python']

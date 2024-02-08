@@ -185,8 +185,6 @@ def _strip_extra(extra, xids):
         i = j
     if not modified:
         return extra
-    if start != len(extra):
-        buffer.append(extra[start:])
     return b''.join(buffer)
 
 def _check_zipfile(fp):
@@ -723,9 +721,7 @@ class _SharedFile:
         self._lock = lock
         self._writing = writing
         self.seekable = file.seekable
-
-    def tell(self):
-        return self._pos
+        self.tell = file.tell
 
     def seek(self, offset, whence=0):
         with self._lock:
@@ -1125,15 +1121,8 @@ class _ZipWriteFile(io.BufferedIOBase):
     def write(self, data):
         if self.closed:
             raise ValueError('I/O operation on closed file.')
-
-        # Accept any data that supports the buffer protocol
-        if isinstance(data, (bytes, bytearray)):
-            nbytes = len(data)
-        else:
-            data = memoryview(data)
-            nbytes = data.nbytes
+        nbytes = len(data)
         self._file_size += nbytes
-
         self._crc = crc32(data, self._crc)
         if self._compressor:
             data = self._compressor.compress(data)
@@ -1351,8 +1340,6 @@ class ZipFile:
             print("given, inferred, offset", offset_cd, inferred, concat)
         # self.start_dir:  Position of start of central directory
         self.start_dir = offset_cd + concat
-        if self.start_dir < 0:
-            raise BadZipFile("Bad offset for central directory")
         fp.seek(self.start_dir, 0)
         data = fp.read(size_cd)
         fp = io.BytesIO(data)
@@ -2199,17 +2186,6 @@ class CompleteDirs(ZipFile):
         dir_match = name not in names and dirname in names
         return dirname if dir_match else name
 
-    def getinfo(self, name):
-        """
-        Supplement getinfo for implied dirs.
-        """
-        try:
-            return super().getinfo(name)
-        except KeyError:
-            if not name.endswith('/') or name not in self._name_set():
-                raise
-            return ZipInfo(filename=name)
-
     @classmethod
     def make(cls, source):
         """
@@ -2247,11 +2223,6 @@ class FastLookup(CompleteDirs):
             return self.__lookup
         self.__lookup = super(FastLookup, self)._name_set()
         return self.__lookup
-
-
-def _extract_text_encoding(encoding=None, *args, **kwargs):
-    # stacklevel=3 so that the caller of the caller see any warning.
-    return io.text_encoding(encoding, 3), args, kwargs
 
 
 class Path:
@@ -2363,9 +2334,9 @@ class Path:
             if args or kwargs:
                 raise ValueError("encoding args invalid for binary operation")
             return stream
-        # Text mode:
-        encoding, args, kwargs = _extract_text_encoding(*args, **kwargs)
-        return io.TextIOWrapper(stream, encoding, *args, **kwargs)
+        else:
+            kwargs["encoding"] = io.text_encoding(kwargs.get("encoding"))
+        return io.TextIOWrapper(stream, *args, **kwargs)
 
     @property
     def name(self):
@@ -2376,8 +2347,8 @@ class Path:
         return pathlib.Path(self.root.filename).joinpath(self.at)
 
     def read_text(self, *args, **kwargs):
-        encoding, args, kwargs = _extract_text_encoding(*args, **kwargs)
-        with self.open('r', encoding, *args, **kwargs) as strm:
+        kwargs["encoding"] = io.text_encoding(kwargs.get("encoding"))
+        with self.open('r', *args, **kwargs) as strm:
             return strm.read()
 
     def read_bytes(self):

@@ -44,11 +44,10 @@ def _is_sunder(name):
 def _is_private(cls_name, name):
     # do not use `re` as `re` imports `enum`
     pattern = '_%s__' % (cls_name, )
-    pat_len = len(pattern)
     if (
-            len(name) > pat_len
+            len(name) >= 5
             and name.startswith(pattern)
-            and name[pat_len:pat_len+1] != ['_']
+            and name[len(pattern)] != '_'
             and (name[-1] != '_' or name[-2] != '_')
         ):
         return True
@@ -393,19 +392,12 @@ class EnumMeta(type):
                 start=start,
                 )
 
-    def __contains__(cls, obj):
-        if not isinstance(obj, Enum):
-            import warnings
-            warnings.warn(
-                    "in 3.12 __contains__ will no longer raise TypeError, but will return True if\n"
-                    "obj is a member or a member's value",
-                    DeprecationWarning,
-                    stacklevel=2,
-                    )
+    def __contains__(cls, member):
+        if not isinstance(member, Enum):
             raise TypeError(
                 "unsupported operand type(s) for 'in': '%s' and '%s'" % (
-                    type(obj).__qualname__, cls.__class__.__qualname__))
-        return isinstance(obj, cls) and obj._name_ in cls._member_map_
+                    type(member).__qualname__, cls.__class__.__qualname__))
+        return isinstance(member, cls) and member._name_ in cls._member_map_
 
     def __delattr__(cls, attr):
         # nicer error message when someone tries to delete an attribute
@@ -588,7 +580,7 @@ class EnumMeta(type):
             return object, Enum
 
         def _find_data_type(bases):
-            data_types = set()
+            data_types = []
             for chain in bases:
                 candidate = None
                 for base in chain.__mro__:
@@ -596,19 +588,19 @@ class EnumMeta(type):
                         continue
                     elif issubclass(base, Enum):
                         if base._member_type_ is not object:
-                            data_types.add(base._member_type_)
+                            data_types.append(base._member_type_)
                             break
                     elif '__new__' in base.__dict__:
                         if issubclass(base, Enum):
                             continue
-                        data_types.add(candidate or base)
+                        data_types.append(candidate or base)
                         break
                     else:
                         candidate = candidate or base
             if len(data_types) > 1:
                 raise TypeError('%r: too many data types: %r' % (class_name, data_types))
             elif data_types:
-                return data_types.pop()
+                return data_types[0]
             else:
                 return None
 
@@ -701,25 +693,19 @@ class Enum(metaclass=EnumMeta):
         except Exception as e:
             exc = e
             result = None
-        try:
-            if isinstance(result, cls):
-                return result
-            else:
-                ve_exc = ValueError("%r is not a valid %s" % (value, cls.__qualname__))
-                if result is None and exc is None:
-                    raise ve_exc
-                elif exc is None:
-                    exc = TypeError(
-                            'error in %s._missing_: returned %r instead of None or a valid member'
-                            % (cls.__name__, result)
-                            )
-                if not isinstance(exc, ValueError):
-                    exc.__context__ = ve_exc
-                raise exc
-        finally:
-            # ensure all variables that could hold an exception are destroyed
-            exc = None
-            ve_exc = None
+        if isinstance(result, cls):
+            return result
+        else:
+            ve_exc = ValueError("%r is not a valid %s" % (value, cls.__qualname__))
+            if result is None and exc is None:
+                raise ve_exc
+            elif exc is None:
+                exc = TypeError(
+                        'error in %s._missing_: returned %r instead of None or a valid member'
+                        % (cls.__name__, result)
+                        )
+            exc.__context__ = ve_exc
+            raise exc
 
     def _generate_next_value_(name, start, count, last_values):
         """

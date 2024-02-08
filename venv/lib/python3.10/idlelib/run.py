@@ -40,13 +40,6 @@ if not hasattr(sys.modules['idlelib.run'], 'firstrun'):
 
 LOCALHOST = '127.0.0.1'
 
-try:
-    eof = 'Ctrl-D (end-of-file)'
-    exit.eof = eof
-    quit.eof = eof
-except NameError: # In case subprocess started with -S (maybe in future).
-    pass
-
 
 def idle_formatwarning(message, category, filename, lineno, line=None):
     """Format warnings the IDLE way."""
@@ -145,7 +138,7 @@ def main(del_exitfunc=False):
                                   args=((LOCALHOST, port),))
     sockthread.daemon = True
     sockthread.start()
-    while True:
+    while 1:
         try:
             if exit_now:
                 try:
@@ -482,7 +475,9 @@ class StdInputFile(StdioFile):
         result = self._line_buffer
         self._line_buffer = ''
         if size < 0:
-            while line := self.shell.readline():
+            while True:
+                line = self.shell.readline()
+                if not line: break
                 result += line
         else:
             while len(result) < size:

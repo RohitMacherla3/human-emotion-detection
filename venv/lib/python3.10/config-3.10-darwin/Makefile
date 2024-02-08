@@ -28,17 +28,17 @@ MODLIBS=           $(LOCALMODLIBS) $(BASEMODLIBS)
 
 # === Variables set by configure
 VERSION=	3.10
-srcdir=		/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work
-VPATH=		/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work
-abs_srcdir=	/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work
-abs_builddir=	/private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work/build-static
+srcdir=		/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work
+VPATH=		/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work
+abs_srcdir=	/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work
+abs_builddir=	/private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/build-static
 
 
 CC=		arm64-apple-darwin20.0.0-clang
 CXX=		arm64-apple-darwin20.0.0-clang++
 MAINCC=		$(CC)
 LINKCC=		$(PURIFY) $(MAINCC)
-AR=		/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/_build_env/bin/arm64-apple-darwin20.0.0-llvm-ar
+AR=		/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/_build_env/bin/arm64-apple-darwin20.0.0-llvm-ar
 READELF=	:
 SOABI=		cpython-310-darwin
 LDVERSION=	$(VERSION)$(ABIFLAGS)
@@ -48,7 +48,7 @@ GITTAG=
 GITBRANCH=	
 PGO_PROF_GEN_FLAG=-fprofile-instr-generate
 PGO_PROF_USE_FLAG=-fprofile-instr-use=code.profclangd
-LLVM_PROF_MERGER=/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/_build_env/bin/llvm-profdata merge -output=code.profclangd *.profclangr
+LLVM_PROF_MERGER=/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/_build_env/bin/llvm-profdata merge -output=code.profclangd *.profclangr
 LLVM_PROF_FILE=LLVM_PROFILE_FILE="code-%p.profclangr"
 LLVM_PROF_ERR=no
 DTRACE=         
@@ -73,15 +73,15 @@ INSTALL_DATA=	${INSTALL} -m 644
 # rather than figuring out exactly which, we always give them executable mode.
 INSTALL_SHARED= ${INSTALL} -m 755
 
-MKDIR_P=	/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work/install-sh -c -d
+MKDIR_P=	/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/install-sh -c -d
 
 MAKESETUP=      $(srcdir)/Modules/makesetup
 
 # Compiler options
-OPT=		-DNDEBUG -fwrapv -O2 -Wall
+OPT=		-DNDEBUG -g -fwrapv -O2 -Wall
 BASECFLAGS=	 -Wno-unused-result -Wsign-compare -Wunreachable-code
 BASECPPFLAGS=	-IObjects -IInclude -IPython
-CONFIGURE_CFLAGS=	-isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/include -fdebug-prefix-map=/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work=/usr/local/src/conda/python-3.10.13 -fdebug-prefix-map=/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv=/usr/local/src/conda-prefix -arch arm64 
+CONFIGURE_CFLAGS=	-isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/include -fdebug-prefix-map=/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work=/usr/local/src/conda/python-3.10.0 -fdebug-prefix-map=/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv=/usr/local/src/conda-prefix -arch arm64 
 # CFLAGS_NODIST is used for building the interpreter and stdlib C extensions.
 # Use it when a compiler flag should _not_ be part of the distutils CFLAGS
 # once Python is installed (Issue #21121).
@@ -104,6 +104,7 @@ PY_CPPFLAGS=	$(BASECPPFLAGS) -I. -I$(srcdir)/Include $(CONFIGURE_CPPFLAGS) $(CPP
 PY_LDFLAGS=	$(CONFIGURE_LDFLAGS) $(LDFLAGS)
 PY_LDFLAGS_NODIST=$(CONFIGURE_LDFLAGS_NODIST) $(LDFLAGS_NODIST)
 NO_AS_NEEDED=	
+SGI_ABI=	@SGI_ABI@
 CCSHARED=	
 # LINKFORSHARED are the flags passed to the $(CC) command that links
 # the python executable -- this is only needed for a few systems
@@ -217,7 +218,7 @@ EXEMODE=	755
 FILEMODE=	644
 
 # configure script arguments
-CONFIG_ARGS=	 '--prefix=/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv' '--build=arm64-apple-darwin20.0.0' '--host=arm64-apple-darwin20.0.0' '--enable-ipv6' '--with-ensurepip=no' '--with-tzpath=/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/share/zoneinfo' '--with-computed-gotos' '--with-system-ffi' '--enable-loadable-sqlite-extensions' '--with-tcltk-includes=-I/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/include' '--with-tcltk-libs=-L/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/lib -ltcl8.6 -ltk8.6' '--with-platlibdir=lib' '--with-lto' '--enable-optimizations' '-oldincludedir=/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/_build_env/arm64-apple-darwin20.0.0/sysroot/usr/include' '--disable-shared' 'PROFILE_TASK=-m test --pgo' 'build_alias=arm64-apple-darwin20.0.0' 'host_alias=arm64-apple-darwin20.0.0' 'MACHDEP=darwin' 'CC=arm64-apple-darwin20.0.0-clang' 'CFLAGS=-isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/include -fdebug-prefix-map=/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_79f7qx8s_9/croot/python-split_1694437913972/work=/usr/local/src/conda/python-3.10.13 -fdebug-prefix-map=/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv=/usr/local/src/conda-prefix -arch arm64 ' 'LDFLAGS=-isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/lib -L/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/lib' 'CPPFLAGS=-isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -D_FORTIFY_SOURCE=2 -isystem /Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/include -mmacosx-version-min=11.1 -I/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/include' 'PKG_CONFIG_PATH=/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/lib/pkgconfig'
+CONFIG_ARGS=	 '--prefix=/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv' '--build=arm64-apple-darwin20.0.0' '--host=arm64-apple-darwin20.0.0' '--enable-ipv6' '--with-ensurepip=no' '--with-tzpath=/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/share/zoneinfo' '--with-computed-gotos' '--with-system-ffi' '--enable-loadable-sqlite-extensions' '--with-tcltk-includes=-I/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/include' '--with-tcltk-libs=-L/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/lib -ltcl8.6 -ltk8.6' '--with-platlibdir=lib' '--with-lto' '--enable-optimizations' '-oldincludedir=/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/_build_env/arm64-apple-darwin20.0.0/sysroot/usr/include' '--disable-shared' 'PROFILE_TASK=-m test --pgo' 'build_alias=arm64-apple-darwin20.0.0' 'host_alias=arm64-apple-darwin20.0.0' 'MACHDEP=darwin' 'CC=arm64-apple-darwin20.0.0-clang' 'CFLAGS=-isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/include -fdebug-prefix-map=/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work=/usr/local/src/conda/python-3.10.0 -fdebug-prefix-map=/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv=/usr/local/src/conda-prefix -arch arm64 ' 'LDFLAGS=-isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/lib -L/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/lib' 'CPPFLAGS=-isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -D_FORTIFY_SOURCE=2 -isystem /Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/include -mmacosx-version-min=11.1 -I/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/include'
 
 
 # Subdirectories with code
@@ -319,7 +320,7 @@ IO_OBJS=	\
 
 ##########################################################################
 
-LIBFFI_INCLUDEDIR=	/Users/rohitmacherla/Documents/Projects/human-emotion-detection/venv/include
+LIBFFI_INCLUDEDIR=	
 
 ##########################################################################
 # Parser
@@ -1272,10 +1273,10 @@ quicktest:	build_all platform
 # SSL tests
 .PHONY: multisslcompile multissltest
 multisslcompile: build_all
-	$(RUNSHARED) ./$(BUILDPYTHON) $(srcdir)/Tools/ssl/multissltests.py --steps=modules
+	$(RUNSHARED) ./$(BUILDPYTHON) Tools/ssl/multissltests.py --steps=modules
 
 multissltest: build_all
-	$(RUNSHARED) ./$(BUILDPYTHON) $(srcdir)/Tools/ssl/multissltests.py
+	$(RUNSHARED) ./$(BUILDPYTHON) Tools/ssl/multissltests.py
 
 install:  commoninstall bininstall maninstall 
 	if test "x$(ENSUREPIP)" != "xno"  ; then \
@@ -1534,7 +1535,6 @@ TESTSUBDIRS=	ctypes/test \
 		test/test_warnings test/test_warnings/data \
 		test/test_zoneinfo test/test_zoneinfo/data \
 		test/tracedmodules \
-		test/typinganndata \
 		test/xmltestdata test/xmltestdata/c14n-20 \
 		test/ziptestdata \
 		tkinter/test tkinter/test/test_tkinter \
@@ -1911,7 +1911,8 @@ rmtestturds:
 	-rm -f gb-18030-2000.xml
 
 docclean:
-	$(MAKE) -C $(srcdir)/Doc clean
+	-rm -rf Doc/build
+	-rm -rf Doc/tools/sphinx Doc/tools/pygments Doc/tools/docutils
 
 # like the 'clean' target but retain the profile guided optimization (PGO)
 # data.  The PGO data is only valid if source code remains unchanged.
@@ -1955,7 +1956,7 @@ clobber: clean
 # Make things extra clean, before making a distribution:
 # remove all generated files, even Makefile[.pre]
 # Keep configure and Python-ast.[ch], it's possible they can't be generated
-distclean: clobber docclean
+distclean: clobber
 	for file in $(srcdir)/Lib/test/data/* ; do \
 	    if test "$$file" != "$(srcdir)/Lib/test/data/README"; then rm "$$file"; fi; \
 	done
@@ -1975,7 +1976,7 @@ distclean: clobber docclean
 
 # Check that all symbols exported by libpython start with "Py" or "_Py"
 smelly: build_all
-	$(RUNSHARED) ./$(BUILDPYTHON) $(srcdir)/Tools/scripts/smelly.py
+	$(RUNSHARED) ./$(BUILDPYTHON) Tools/scripts/smelly.py
 
 # Find files with funny names
 funny:
@@ -2014,12 +2015,6 @@ patchcheck: build_all
 
 check-limited-abi: all
 	$(RUNSHARED) ./$(BUILDPYTHON) $(srcdir)/Tools/scripts/stable_abi.py --all $(srcdir)/Misc/stable_abi.txt
-
-.PHONY: update-config
-update-config:
-	curl -sL -o config.guess 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD'
-	curl -sL -o config.sub 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD'
-	chmod +x config.guess config.sub
 
 # Dependencies
 

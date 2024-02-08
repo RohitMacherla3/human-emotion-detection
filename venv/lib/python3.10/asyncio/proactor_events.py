@@ -60,7 +60,6 @@ class _ProactorBasePipeTransport(transports._FlowControlMixin,
         self._pending_write = 0
         self._conn_lost = 0
         self._closing = False  # Set when close() called.
-        self._called_connection_lost = False
         self._eof_written = False
         if self._server is not None:
             self._server._attach()
@@ -114,7 +113,7 @@ class _ProactorBasePipeTransport(transports._FlowControlMixin,
     def __del__(self, _warn=warnings.warn):
         if self._sock is not None:
             _warn(f"unclosed transport {self!r}", ResourceWarning, source=self)
-            self._sock.close()
+            self.close()
 
     def _fatal_error(self, exc, message='Fatal error on pipe transport'):
         try:
@@ -137,7 +136,7 @@ class _ProactorBasePipeTransport(transports._FlowControlMixin,
                 self._empty_waiter.set_result(None)
             else:
                 self._empty_waiter.set_exception(exc)
-        if self._closing and self._called_connection_lost:
+        if self._closing:
             return
         self._closing = True
         self._conn_lost += 1
@@ -152,8 +151,6 @@ class _ProactorBasePipeTransport(transports._FlowControlMixin,
         self._loop.call_soon(self._call_connection_lost, exc)
 
     def _call_connection_lost(self, exc):
-        if self._called_connection_lost:
-            return
         try:
             self._protocol.connection_lost(exc)
         finally:
@@ -161,7 +158,7 @@ class _ProactorBasePipeTransport(transports._FlowControlMixin,
             # end then it may fail with ERROR_NETNAME_DELETED if we
             # just close our end.  First calling shutdown() seems to
             # cure it, but maybe using DisconnectEx() would be better.
-            if hasattr(self._sock, 'shutdown') and self._sock.fileno() != -1:
+            if hasattr(self._sock, 'shutdown'):
                 self._sock.shutdown(socket.SHUT_RDWR)
             self._sock.close()
             self._sock = None
@@ -169,7 +166,6 @@ class _ProactorBasePipeTransport(transports._FlowControlMixin,
             if server is not None:
                 server._detach()
                 self._server = None
-            self._called_connection_lost = True
 
     def get_write_buffer_size(self):
         size = self._pending_write
@@ -456,8 +452,7 @@ class _ProactorWritePipeTransport(_ProactorBaseWritePipeTransport):
             self.close()
 
 
-class _ProactorDatagramTransport(_ProactorBasePipeTransport,
-                                 transports.DatagramTransport):
+class _ProactorDatagramTransport(_ProactorBasePipeTransport):
     max_size = 256 * 1024
     def __init__(self, loop, sock, protocol, address=None,
                  waiter=None, extra=None):

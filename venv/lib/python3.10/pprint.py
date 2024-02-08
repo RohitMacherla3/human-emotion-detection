@@ -50,8 +50,7 @@ def pprint(object, stream=None, indent=1, width=80, depth=None, *,
     """Pretty-print a Python object to a stream [default is sys.stdout]."""
     printer = PrettyPrinter(
         stream=stream, indent=indent, width=width, depth=depth,
-        compact=compact, sort_dicts=sort_dicts,
-        underscore_numbers=underscore_numbers)
+        compact=compact, sort_dicts=sort_dicts, underscore_numbers=False)
     printer.pprint(object)
 
 def pformat(object, indent=1, width=80, depth=None, *,

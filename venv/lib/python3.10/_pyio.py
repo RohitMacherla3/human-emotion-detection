@@ -338,7 +338,8 @@ except AttributeError:
 
 class IOBase(metaclass=abc.ABCMeta):
 
-    """The abstract base class for all I/O classes.
+    """The abstract base class for all I/O classes, acting on streams of
+    bytes. There is no public constructor.
 
     This class provides dummy implementations for many methods that
     derived classes can override selectively; the default implementations
@@ -1844,7 +1845,7 @@ class TextIOBase(IOBase):
     """Base class for text I/O.
 
     This class provides a character and line based interface to stream
-    I/O.
+    I/O. There is no public constructor.
     """
 
     def read(self, size=-1):
