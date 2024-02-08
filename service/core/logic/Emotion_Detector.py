@@ -2,6 +2,8 @@ import onnxruntime as rt
 import numpy as np
 import cv2
 import tensorflow as tf
+import time
+import service.main as model
 
 def Emotion_Detector(image_array):
     
@@ -13,11 +15,13 @@ def Emotion_Detector(image_array):
     im = np.float32(im)
     im = tf.expand_dims(im, axis=0)
     
-    providers = ['CPUExecutionProvider']
-    ViT_model = rt.InferenceSession('Model/ViT_quantized.onnx', providers=providers)
-    prediction = ViT_model.run(['dense'], {'input': np.array(im)})
+    time_start = time.time()
+
+    prediction = model.ViT_model.run(['dense'], {'input': np.array(im)})
     emotion_class = np.argmax(prediction, axis =-1)[0]
     print(emotion_class)
+    
+    time_elapsed = time.time() - time_start
     
     if int(emotion_class) == 0:
         emotion = 'Angry'
@@ -26,4 +30,5 @@ def Emotion_Detector(image_array):
     elif int(emotion_class) == 2:
         emotion = 'Sad'
     
-    return {'Emotion':  emotion}
+    return {'Emotion':  emotion, 
+            'TimeElapsed': str(time_elapsed)}
