@@ -11,7 +11,7 @@ contourpy==1.2.0
 cycler==0.12.1
 exceptiongroup==1.2.0
 fastapi==0.109.2
-numpy
+numpy==1.26.4
 lap
 flatbuffers==23.5.26
 fonttools==4.48.1
