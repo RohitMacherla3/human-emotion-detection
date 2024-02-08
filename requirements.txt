@@ -11,7 +11,7 @@ contourpy==1.2.0
 cycler==0.12.1
 exceptiongroup==1.2.0
 fastapi==0.109.2
-filterpy==1.4.5
+filterpy
 flatbuffers==23.5.26
 fonttools==4.48.1
 gast==0.5.4
