@@ -1,7 +1,6 @@
 import onnxruntime as rt
 import numpy as np
 import cv2
-import tensorflow as tf
 import time
 import service.main as model
 
@@ -13,7 +12,7 @@ def Emotion_Detector(image_array):
     if im.shape[-1] == 1 or len(im.shape) ==2:
         im = cv2.cvtColor(im, cv2.COLOR_GRAY2RGB)
     im = np.float32(im)
-    im = tf.expand_dims(im, axis=0)
+    im = np.expand_dims(im, axis=0)
     
     time_start = time.time()
 
