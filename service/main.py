@@ -13,8 +13,3 @@ ViT_model = rt.InferenceSession('Model/ViT_quantized.onnx', providers=providers)
 @app.get('/')
 async def root():
     return 'Welcome!'
-
-if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 3000))
-    import uvicorn
-    uvicorn.run(app, host='0.0.0.0', port=port)
