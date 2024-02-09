@@ -1,6 +1,6 @@
 import onnxruntime as rt
 import numpy as np
-import cv2
+from opencv import cv2
 import time
 import service.main as model
 
