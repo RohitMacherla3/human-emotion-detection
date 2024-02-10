@@ -15,7 +15,7 @@ def get_requirements(file_path:str) -> List[str]:
 
 setup(
     name='human-emotion-detection',
-    version='0.0.1',
+    version='1.0.1',
     author='Rohit Macherla',
     author_email='rohitmacherla125@gmail.com',
     packages=find_packages(),
