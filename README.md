@@ -1,6 +1,8 @@
 ### Objective
 The project aims to detect various human emotions like "angry", "happy", and "sad" based on image data. It utilizes custom convolutional neural networks as a baseline model and incorporates modern CNNs like ResNet and EfficientNet while also exploring the Transformer models in Vision to get the optimal results.
 
+### Deployment
+
 Streamlit Web Application - https://human-emotion-detection-rohit-497dba159712.herokuapp.com/
 
 Note: The app is disabled as it is not free of cost, will be enabled upon request (please email - rohitmacherla125@gmail.com with time buffer of 10 min eg: Feb 10  2:00PM - 2:10 PM)
