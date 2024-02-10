@@ -6,7 +6,7 @@ from PIL import Image, ImageOps
 import time
 
 st.set_page_config(layout="centered")
-
+@st.cache_resource
 def load_Model():
     providers = ['CPUExecutionProvider']
     ViT_model = rt.InferenceSession('Model/ViT_quantized.onnx', providers=providers)
