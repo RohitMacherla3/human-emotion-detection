@@ -5,7 +5,7 @@ import numpy as np
 from PIL import Image, ImageOps
 import time
 
-st.set_page_config(layout="wide")
+st.set_page_config(layout="centered")
 
 def load_Model():
     providers = ['CPUExecutionProvider']
@@ -13,10 +13,15 @@ def load_Model():
     return ViT_model
 
 Model = load_Model()
-st.title("Human Emotion Detection")
+
+st.markdown(
+    """
+    <h1 style='text-align: center;'>Human Emotion Detection</h1>
+    """,
+    unsafe_allow_html=True
+)
 
 inp_image = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
-
 
 def Emotion_Detector(image_array, model):
     im = cv2.resize(image_array, (224, 224))
@@ -50,8 +55,25 @@ def predict(image_data, model):
     img = np.array(image)
     
     return Emotion_Detector(img, model)
+
 if inp_image is not None:
-    st.image(inp_image, use_column_width=400)
+    
+    st.image(inp_image, use_column_width=600)
+    
+    st.markdown(
+        """
+        <style>
+        /* Increase the size of the button */
+        .stButton>button {
+            width: 200px; 
+            height: 50px; 
+            margin: 0 auto;
+            display: block;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
     if st.button("Predict"):
         with st.spinner("Predicting..."):
             image = Image.open(inp_image)
