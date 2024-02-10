@@ -50,8 +50,8 @@ Tensorflow callbacks were used for logging to later visualize on a Tensorboard. 
 
 Model Comparision Plot
 
+<img width="771" alt="image" src="https://github.com/RohitMacherla3/human-emotion-detection-CV/assets/89356811/6e483a42-57d9-4ecd-af0b-7b4466bb9b96">
 
-![image](https://github.com/RohitMacherla3/human-emotion-detection-CV/assets/89356811/7908ba96-3fe9-4634-9f1d-796162359bc3)
 
 ### Predictions
 
