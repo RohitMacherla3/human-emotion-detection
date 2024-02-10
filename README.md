@@ -43,7 +43,8 @@ Below are the configurations:
 Tensorflow callbacks were used for logging to later visualize on a Tensorboard. 'Early Stopping' and 'Reduce on Plateau' were implemented to stop the training when there was no further improvement for a certain number of epochs.
 
 ### Metrics
-<img width="511" alt="image" src="https://github.com/RohitMacherla3/human-emotion-detection/assets/89356811/ed76845f-9e9f-4a9e-8564-5a130701311e">
+<img width="616" alt="image" src="https://github.com/RohitMacherla3/human-emotion-detection-CV/assets/89356811/08b7dbeb-fb23-4833-ab90-58891aa8804a">
+
 
 
 Model Comparision Plot
