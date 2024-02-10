@@ -49,3 +49,4 @@ tzlocal
 urllib3
 validators
 zipp
+typing
