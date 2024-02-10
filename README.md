@@ -55,7 +55,8 @@ Model Comparision Plot
 
 ### Predictions
 
-![image](https://github.com/RohitMacherla3/human-emotion-detection-CV/assets/89356811/cfd563ff-9649-4ff1-ba79-48b06d8340d4)
+<img width="948" alt="image" src="https://github.com/RohitMacherla3/human-emotion-detection-CV/assets/89356811/97ac5d99-379e-4456-af09-8904e49d4c7b">
+
 
 ### Conclusion
 As one would assume, the transformer model outperforms the CNN models with just training for 10 epochs, and among the CNN models, EfficientNetB4 does a good job compared to ResNet50 with much lesser model complexity.
