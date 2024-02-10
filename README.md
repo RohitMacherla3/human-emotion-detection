@@ -12,7 +12,8 @@ It has train and test datasets separated both containing 3 classes - 'angry', 'h
 
 Train data has about 6799 files and the train data has 2278 files.
 
-![image](https://github.com/RohitMacherla3/human-emotion-detection/assets/89356811/85a4b73b-efee-46c4-9e46-477a2efd6298)
+<img width="704" alt="image" src="https://github.com/RohitMacherla3/human-emotion-detection-CV/assets/89356811/9b8a3336-51cb-4305-af5e-28097bbf476f">
+
 
 ### Preprocessing
 
