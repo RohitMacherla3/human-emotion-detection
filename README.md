@@ -5,6 +5,8 @@ Streamlit Web Application - https://human-emotion-detection-rohit-497dba159712.h
 
 Note: The app is disabled as it is not free of cost, will be enabled upon request (please email - rohitmacherla125@gmail.com with time buffer of 10 min eg: Feb 10  2:00PM - 2:10 PM)
 
+Demo - https://drive.google.com/file/d/149nrnDqP_18d2nTP5bUkbGFOKu8S5438/view?usp=sharing
+
 ### Dataset
 
 The dataset is obtained from Kaggle - https://www.kaggle.com/datasets/muhammadhananasghar/human-emotions-datasethes
