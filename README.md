@@ -8,7 +8,6 @@ Streamlit Web Application - https://human-emotion-detection.streamlit.app/
 <img width="365" alt="image" src="https://github.com/RohitMacherla3/human-emotion-detection-CV/assets/89356811/d0bb916e-545a-4dd1-baf7-6ec22e1817c9">
 
 
-Demo - https://drive.google.com/file/d/149nrnDqP_18d2nTP5bUkbGFOKu8S5438/view?usp=sharing
 
 ### Dataset
 
